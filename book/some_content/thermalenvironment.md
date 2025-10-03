@@ -8,7 +8,9 @@ For spacecraft flight purposes, the boundary of space is generally accepted as 1
 The two bodies controlling the space environment for most aircraft are the Earth and the Sun, with other celestial bodies being only important to specific spacecraft missions.   
 
 #### Deep Space
-Deep space is the cold darkness that surrounds the spacecraft. Cosmic background radiation s electromagnetic radiation in the microwave band filling the observable universe almost uniformly. This deep-space nearly-isotropic radiation (also known as cosmic microwave background, CMB) is a relic from the Big Bang, predicted by Gamov in 1948 and discovered in 1964 by A. Penzias and R. Wilson. The CMB behaves like a nearly perfect black-body radiator with a temperature of 2.73±0.05 K. For most engineering purposes this is set at 3K.   
+Deep space is the cold darkness that surrounds the spacecraft. Cosmic background radiation s electromagnetic radiation in the microwave band filling the observable universe almost uniformly. This deep-space nearly-isotropic radiation (also known as cosmic microwave background, CMB) is a relic from the Big Bang, predicted by Gamov in 1948 and discovered in 1964 by A. Penzias and R. Wilson.  
+The CMB behaves like a nearly perfect black-body radiator with a temperature of 2.73±0.05 K. For most engineering purposes this is set at 3K.   
+
 Taking into account the background radiation is significant for certain applications, such as cryogenic radiators and sensors. However for other application, it can also be neglected, e.g. the thermal balance of a rocket nozzle.   
 #### Solar Radiation
 
