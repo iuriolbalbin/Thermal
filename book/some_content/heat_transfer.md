@@ -1,9 +1,9 @@
 ## Types of heat transfer
 Heat transfer deals with the transfer of the thermal energy between the environment and the spacecraft and between spacecraft elements. It is either expressed as a heat flow or as a heat flux. 
 
-**Heat Flow**  is the transfer of thermal energy (heat) per unit time. This is denoted with the symbol a capital Q. This is a scalar and expressed in Watt (W=J/s).
+**Heat Flow**  is the transfer of thermal energy (heat) per unit time. This is denoted with the symbol a capital Q. This is a scalar and expressed in Watt ($W=J/s$).
 
-**Heat Flux** is the transfer of thermal energy (heat) per unit time per unit area. This is denoted with a Φ. The heat flux is a vector and expressed in W/m2 (=J/s/m2).
+**Heat Flux** is the transfer of thermal energy (heat) per unit time per unit area. This is denoted with a Φ. The heat flux is a vector and expressed in $W/m^2$ ($=J/s/m^2$).
 
 
 Three mechanisms of heat transfer are:
@@ -20,9 +20,9 @@ In the next sections, all three mechanisms will be explained in more detail.
 Conduction is the heat transfer by molecular interaction. This is heat transfer through parts and contact points. Locally this is important and essential within your system. Conduction through a part is driven by the dimensions and material of the part. 
 For a part made of a material with temperature independent properties, the heat flow can be described by a conductive coupling and a temperature difference. 
 
-In this equation Q_ij is the heat flow between node i and j, and C_ij is the conductive coupling between node i and j. Note that the equation scales linearly with the temperature difference. 
+In this equation $Q_ij$ is the heat flow between node $i$ and $j$, and $C_ij$ is the conductive coupling between node $i$ and $j$. Note that the equation scales linearly with the temperature difference. 
 
-The conductive coupling is a function of the material conductivity and a shape factor. In the equation below k is the conductivity in W/mK and S is the Langmuir conductive shape factor with units meter. 
+The conductive coupling is a function of the material conductivity and a shape factor. In the equation below k is the conductivity in $W/mK$ and S is the Langmuir conductive shape factor with units meter. 
 
 For a “simple” part like a rectangle, a cylinder or a plate the shape factor can be described as the division of cross-section (A in m2), divided by the length of the thermal path (L in m). 
 
@@ -34,10 +34,10 @@ The conductivity of some materials is also not homogenous in all directions. Exa
 
 A special case of conduction is conduction between two adjacent surfaces. This contact is not perfect due to the roughness of the surfaces. This forces the heat flow through a smaller area. 
 
-The conduction between these two surfaces can be described with a contact conductance coefficient and the area of contact in m2:
+The conduction between these two surfaces can be described with a contact conductance coefficient and the area of contact in $m^2$:
 
 
-The contact conductance coefficient is measured in watts per square meter per kelvin (W/m²K) and depends on several factors. These include the thermal conductivity of both surfaces, the roughness and machining method, the type of surface finish such as anodizing, the hardness and stiffness of the parts in contact, the distribution of contact pressure, and the contribution of radiation between parts when temperatures exceed 900 K. Because many of these parameters are not known in advance, the contact conductance coefficient is typically determined through testing. Before testing, estimates can be made using empirical correlations, such as those provided in ECSS-E-HB-31-01 part 4A.
+The contact conductance coefficient is measured in watts per square meter per kelvin ($W/m^2 K$) and depends on several factors. These include the thermal conductivity of both surfaces, the roughness and machining method, the type of surface finish such as anodizing, the hardness and stiffness of the parts in contact, the distribution of contact pressure, and the contribution of radiation between parts when temperatures exceed 900 K. Because many of these parameters are not known in advance, the contact conductance coefficient is typically determined through testing. Before testing, estimates can be made using empirical correlations, such as those provided in ECSS-E-HB-31-01 part 4A.
 
 To enhance heat transfer and reduce uncertainty associated with contact conductance, the coefficient can be increased. This can be done by using interface fillers, increasing the contact pressure, or improving the surface condition through cleaning and polishing. Thermal grease may also be considered, although it is generally avoided in space applications because of its potential to outgas.
 
@@ -51,15 +51,18 @@ In the space environment, convection is generally absent due to the lack of a me
 Convection is also important during certain ground-based phases such as transport or launch.  In correlation tests conducted in non-vacuum environments, convection introduces additional cooling or heating that must be accounted for.
 To include convection in a thermal model the newton rate equation can be used. Note that this equation scales linear with the temperature difference like the conduction equation.  
 
+```{math}
+:label: newtonrateequation
 q/A=h⋅ΔT
+```
 
 Where
 q    : Rate of convective heat transfer in W
-A    : Area normal to heat flow in m^2
+A    : Area normal to heat flow in $m^2$
 ΔT : Temperature difference in K between the fluid and solid node
-h    : Convective heat transfer coefficient in W/m^2 K:
+h    : Convective heat transfer coefficient in $W/m^2 K$:
 
-However, the convective heat transfer coefficient h is a highly uncertain parameter. While this approach is suitable for early-stage analysis, more detailed models or aerodynamic simulations may be developed for greater accuracy when required. Typical values of h for air are: 5 -50 W/m²·K for free convection and 25 - 250 W/m²·K for forced convection. 
+However, the convective heat transfer coefficient h is a highly uncertain parameter. While this approach is suitable for early-stage analysis, more detailed models or aerodynamic simulations may be developed for greater accuracy when required. Typical values of h for air are: 5 -50 $W/m^2 K$ for free convection and 25 - 250 $W/m^2 K$ for forced convection. 
 
 ### Radiation
 All objects with a temperature above 0 K emit thermal radiation due to microscopic energy transitions and electron oscillations. Temperature reflects the intensity of this microscopic activity. Radiation heat transfer does not require a material medium and spans the electromagnetic spectrum from 0.1 μm to 100 μm. Emitted radiation varies with wavelength and direction, and its intensity depends on the object's material, surface condition, and temperature.
@@ -69,10 +72,13 @@ The concept of black body radiation serves as a useful standard for comparing th
  
 The spectral of a black body at a given wavelength and temperature can be described by Planck’s law:
 
+```{math}
+:label: Planck
 Φ_b (λ,T)=(2πhc^2)/λ^5   1/(e^(hc/kTλ)-1)[W/m^3]
-
+```
 Where:
- = wavelength [m],   T = absolute temperature  
+$\lambda$= wavelength [m]
+T = absolute temperature  
 k = Boltzmann’s constant = 1.4E-23 kg m2/s2/K  
 h = Planck’s constant = 6.6E-34 J s  
 c = velocity of light in vacuum = 3E8 m/s  
