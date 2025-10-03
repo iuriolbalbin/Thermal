@@ -106,5 +106,6 @@ parse:
     - linkify
     - substitution
     - tasklist
+    - amsmath
   myst_url_schemes: [mailto, http, https]            # Default value (lines can be removed), sets URI schemes that will be recognised as external URLs in Markdown links, configuration part of MyST parser (https://myst-parser.readthedocs.io/en/latest/syntax/optional.html)
   myst_dmath_double_inline: true                     # Default value (lines can be removed), allows display math ($$) within an inline context, configuration part of MyST parser (https://myst-parser.readthedocs.io/en/latest/syntax/optional.html)
