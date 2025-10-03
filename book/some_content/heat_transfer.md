@@ -158,17 +158,52 @@ In general, optical properties can be divided into 4 categories:
 	Flat reflector: low α, low ε. For example aluminium paint. These surfaces reflect all types of radiation and reduce the effect of radiative heat exchange. 
  
 Some example values for the (solar) absorptivity coefficient and the IR emissivity coefficient are shown. 
-Table 2  Optical properties.
-Material	Solar absorptance	Hemispherical emissivity	α/ϵ
-Black paint	0.96	0.88	1.09
-Aluminized Teflon foil	0.15	0.75	0.20
-Silvered Teflon foil	0.11	0.80	0.14
-Aluminized Kapton foil	0.42	0.72	0.58
-Aluminized Kapton foil (metal side)	0.12	0.05	2.4
-White Paint	0.17	0.82	0.21
-Solar cell Si	0.75	0.82	0.91
-Solar GaAs	0.91	0.81	1.12
-CRFP	0.92	0.82	1.12
+
+```{list-table} Table 2. Optical properties
+:header-rows: 1
+:name: tab-optical-properties
+
+* - Material
+  - Solar absorptance ($\alpha$)
+  - Hemispherical emissivity ($\varepsilon$)
+  - $\alpha / \varepsilon$
+* - Black paint
+  - 0.96
+  - 0.88
+  - 1.09
+* - Aluminized Teflon foil
+  - 0.15
+  - 0.75
+  - 0.20
+* - Silvered Teflon foil
+  - 0.11
+  - 0.80
+  - 0.14
+* - Aluminized Kapton foil
+  - 0.42
+  - 0.72
+  - 0.58
+* - Aluminized Kapton foil (metal side)
+  - 0.12
+  - 0.05
+  - 2.40
+* - White paint
+  - 0.17
+  - 0.82
+  - 0.21
+* - Solar cell (Si)
+  - 0.75
+  - 0.82
+  - 0.91
+* - Solar cell (GaAs)
+  - 0.91
+  - 0.81
+  - 1.12
+* - CFRP
+  - 0.92
+  - 0.82
+  - 1.12
+
 
 To get a sense of the temperature response of a material, you can setup a simple heat balance for a one sided panel:
 
@@ -239,7 +274,7 @@ The Gebhart factor *Bij* represents the fraction of radiation leaving surface i 
 For an enclosure of N surfaces, the Gebhart factor can be calculated as:
 ```{math}
 :label: Gebhart1
-\( B_{ij} = F_{ij}\,\varepsilon_{j} + \sum_{k=1}^{N} (1-\varepsilon_{k})\,F_{ik}\,B_{kj} \)
+B_{ij} = F_{ij}\,\varepsilon_{j} + \sum_{k=1}^{N} (1-\varepsilon_{k})\,F_{ik}\,B_{kj} 
 ```
 where *Fij* is the view factor from surface *i* to *j*, and *εj* is the emissivity of surface *j*. 
 
@@ -247,16 +282,16 @@ When analysing an enclosure, several general relationships among the possible Ge
 - Bounding: Gebhart factors are fractions by definition and are bounded between 0 and 1:
 ```{math}
 :label: Gebhart2
-\( 0 \leq B_{ij} \leq 1 \)
+ 0 \leq B_{ij} \leq 1 
 ```
 - Conservation: The total of all Gebhart factors from a given surface must equal 1, including the portion it reabsorbs itself:
 ```{math}
 :label: Gebhart3
-\( \sum_i B_{ij} = 1 \)
+ \sum_i B_{ij} = 1 
 ```
 - Reciprocity: There is a symmetry in energy exchange between surfaces.   The factor Rij is the radiative coupling factor between surfaces i and j (in m²). 
 ```{math}
 :label: Gebhart4
-\( \varepsilon_i A_i B_{ij} = \varepsilon_j A_j B_{ji} = R_{ij} \)
+ \varepsilon_i A_i B_{ij} = \varepsilon_j A_j B_{ji} = R_{ij} 
 ```
 In practical thermal analysis, Gebhart factors allow for more accurate calculation of radiative heat exchange in enclosures, particularly when multiple reflections are significant. These values can be obtained from known view factors and surface emissivities or by using specialized radiation analysis software with Monte Carlo raytracing.
