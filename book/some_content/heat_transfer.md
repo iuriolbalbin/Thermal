@@ -215,53 +215,37 @@ Surfaces can also respond differently to incoming radiation. A specular reflecto
 The total reflected heat flux leaving a surface in all directions (complete hemisphere) due to spectral directional irradiation is referred to as the spectral directional-hemispherical reflectance. 
 
 #### View and Gebhart factors
-Radiative heat transfer between surfaces depends on several factors, including the orientation of the surfaces relative to each other, their radiation properties, and their temperatures. To account for the effect of orientation, view factors are used. These are purely geometrical and describe the fraction of radiation leaving one surface that directly reaches another.
+Radiative heat transfer between surfaces depends on several factors, including the orientation of the surfaces relative to each other, their radiation properties, and their temperatures. To account for the effect of orientation, **view factors** are used. These are purely geometrical and describe the fraction of radiation leaving one surface that directly reaches another.
+
 The view factor from surface i to surface j, denoted F_(i,j) , is defined as the fraction of the radiation leaving surface i that directly strikes surface j.
- 
-
-Considering the surfaces in Figure 10, to calculate the view factor between them, first we assess the total rate of radiation leaving dA_1  in all directions is which is: 
-
-where  I_1 is the radiation intensity.  
-The portion of radiation from dA_1  striking dA_2 can be expressed as:
-
-where dω_21 is the solid angle,  θ_1, θ_2 are the angles relatives to the normal and r is the distance between two surfaces. 
-
-Putting together both equations, the differential view factor (fraction of radiation leaving dA_1   that strikes dA_2 directly is: 
-
-
-The view factor by dA1 is then obtained by integrating over A_2  :
-
-
-A special case occurs when a surface "sees" itself. In general, the view factor is zero, except in the case of concave surfaces, as illustrated in Figure 11.
  
 When analysing an enclosure, where all surfaces are visible to one another, several general relationships can be defined among the N2 possible view factors. These are known as view factor algebra:
 
-Bounding: View factors are fractions and are therefore bounded between 0 and 1. 
+- Bounding: View factors are fractions and are therefore bounded between 0 and 1. 
 ```{math}
 :label: VF0
-F_{ij}
+0 \leq F_{ij} \leq 1
 ```
 
-Conservation: The sum of all view factors from a surface, including any self-view factor (for concave surfaces), must equal 1. This reflects energy conservation, radiation emitted from a surface must be fully accounted for within the enclosure.
+- Conservation: The sum of all view factors from a surface, including any self-view factor (for concave surfaces), must equal 1. This reflects energy conservation, radiation emitted from a surface must be fully accounted for within the enclosure.
 ```{math}
 :label: VF1
-F_{ij}
+ \sum_j F_{ij} = 1 
 ```
-Reciprocity: Based on the geometry of radiative exchange, the following relation holds:
+- Reciprocity: Based on the geometry of radiative exchange, the following relation holds:
 ```{math}
 :label: VF2
-F_{ij}
+A_i F_{ij} = A_j F_{ji} 
 ```
-Distribution: When a surface radiates to two or more targets, the view factor to the combined area equals the sum of the individual view factors:
+- Distribution: When a surface radiates to two or more targets, the view factor to the combined area equals the sum of the individual view factors:
 ```{math}
 :label: VF3
-F_{ij}
+F_{i, j+k} = F_{ij} + F_{ik}
 ```
-
-Composition: Using reciprocity and distribution, the total radiation from two source areas to a third can be written as:
+- Composition: Using reciprocity and distribution, the total radiation from two source areas to a third can be written as:
 ```{math}
 :label: VF4
-F_{ij}
+A_i F_{ik} + A_j F_{jk} = (A_i + A_j) F_{i+j, k}
 ```
 
 In a system with N surfaces, there are N2 total view factors. However, only N(N−1)/2 are independent, since another N(N−1)/2 can be derived from reciprocity, and N more from the conservation condition. For example, in a 3-surface enclosure, there are 9 possible view factors. Of these, 3 must be independently determined, 3 can be derived using reciprocity, and the remaining 3 from the conservation condition.
