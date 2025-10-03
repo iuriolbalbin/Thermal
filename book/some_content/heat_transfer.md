@@ -185,32 +185,52 @@ The view factor from surface i to surface j, denoted F_(i,j) , is defined as the
  
 
 Considering the surfaces in Figure 10, to calculate the view factor between them, first we assess the total rate of radiation leaving dA_1  in all directions is which is: 
-Q ̇_dA1=I_1 πdA_1
-where  I_1is the radiation intensity.  
+
+where  I_1 is the radiation intensity.  
 The portion of radiation from dA_1  striking dA_2 can be expressed as:
-Q ̇_(dA1→2)=I_1  cos⁡〖(θ_1 )dA_1 dω_21=〖I_1 cos〗⁡〖(θ_1 )dA_1  (〖dA〗_2  cos⁡(θ_2 ))/r^2 〗 〗  
+
 where dω_21 is the solid angle,  θ_1, θ_2 are the angles relatives to the normal and r is the distance between two surfaces. 
+
 Putting together both equations, the differential view factor (fraction of radiation leaving dA_1   that strikes dA_2 directly is: 
-dF_(dA1→dA2)=Q ̇_(dA1→2)/Q ̇_dA1 =(cos⁡〖(θ_1 )  cos⁡(θ_2 ) 〗 dA_2)/(πr^2 )
+
+
 The view factor by dA1 is then obtained by integrating over A_2  :
-F_(dA1→dA2)=∫_(A_2)▒cos⁡〖(θ_1 )  cos⁡(θ_2 ) 〗/(πr^2 ) dA_2
+
+
 A special case occurs when a surface "sees" itself. In general, the view factor is zero, except in the case of concave surfaces, as illustrated in Figure 11.
  
 When analysing an enclosure, where all surfaces are visible to one another, several general relationships can be defined among the N2 possible view factors. These are known as view factor algebra:
 
 Bounding: View factors are fractions and are therefore bounded between 0 and 1. 
+```{math}
+:label: VF0
+F_{ij}
+```
 
 Conservation: The sum of all view factors from a surface, including any self-view factor (for concave surfaces), must equal 1. This reflects energy conservation, radiation emitted from a surface must be fully accounted for within the enclosure.
-
+```{math}
+:label: VF1
+F_{ij}
+```
 Reciprocity: Based on the geometry of radiative exchange, the following relation holds:
-
+```{math}
+:label: VF2
+F_{ij}
+```
 Distribution: When a surface radiates to two or more targets, the view factor to the combined area equals the sum of the individual view factors:
-F_(i,j+k)=F_ij+F_ik  
+```{math}
+:label: VF3
+F_{ij}
+```
 
 Composition: Using reciprocity and distribution, the total radiation from two source areas to a third can be written as:
-A_i F_ik+A_j F_jk=(A_i+A_j ) F_(i+j,k)
+```{math}
+:label: VF4
+F_{ij}
+```
 
 In a system with N surfaces, there are N2 total view factors. However, only N(N−1)/2 are independent, since another N(N−1)/2 can be derived from reciprocity, and N more from the conservation condition. For example, in a 3-surface enclosure, there are 9 possible view factors. Of these, 3 must be independently determined, 3 can be derived using reciprocity, and the remaining 3 from the conservation condition.
+
 To calculate the view factors that must be independently determined, several approaches are available. One option is to perform the surface-to-surface integration directly, although this is generally not recommended due to its complexity. A more practical method is to use analytical expressions available in established references, such as the European standard ECSS-E-HB-31-01 Part 1A. Alternatively, Monte Carlo raytracing software can be employed to numerically estimate view factors, especially for complex geometries.
 
 In thermal radiation analysis, **Gebhart factors** are used to describe how much of the radiation leaving one surface is ultimately absorbed by another, accounting for all possible reflections within an enclosure. This approach is used when working with diffuse grey surfaces, where surface properties such as emissivity do not vary with wavelength, and radiation is emitted uniformly in all directions.
@@ -225,9 +245,18 @@ where *Fij* is the view factor from surface *i* to *j*, and *εj* is the emissiv
 
 When analysing an enclosure, several general relationships among the possible Gebhart factors can be defined. These follow rules similar to view factor algebra:
 - Bounding: Gebhart factors are fractions by definition and are bounded between 0 and 1:
-
+```{math}
+:label: Gebhart2
+\( 0 \leq B_{ij} \leq 1 \)
+```
 - Conservation: The total of all Gebhart factors from a given surface must equal 1, including the portion it reabsorbs itself:
-
+```{math}
+:label: Gebhart3
+\( \sum_i B_{ij} = 1 \)
+```
 - Reciprocity: There is a symmetry in energy exchange between surfaces.   The factor Rij is the radiative coupling factor between surfaces i and j (in m²). 
-
+```{math}
+:label: Gebhart4
+\( \varepsilon_i A_i B_{ij} = \varepsilon_j A_j B_{ji} = R_{ij} \)
+```
 In practical thermal analysis, Gebhart factors allow for more accurate calculation of radiative heat exchange in enclosures, particularly when multiple reflections are significant. These values can be obtained from known view factors and surface emissivities or by using specialized radiation analysis software with Monte Carlo raytracing.
