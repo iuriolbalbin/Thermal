@@ -3,13 +3,13 @@ Heat transfer deals with the transfer of the thermal energy between the environm
 
 **Heat Flow**  is the transfer of thermal energy (heat) per unit time. This is denoted with the symbol a capital Q. This is a scalar and expressed in Watt ($W=J/s$).
 
-```{figure} ./figures/HeatFlow.jpg
+```{figure} ./figures/HeatFlow.png
 :name: HeatFlow
 Heat Flow
 ```
 
 **Heat Flux** is the transfer of thermal energy (heat) per unit time per unit area. This is denoted with a Φ. The heat flux is a vector and expressed in $W/m^2$ ($=J/s/m^2$).
-```{figure} ./figures/HeatFlux.jpg
+```{figure} ./figures/HeatFlux.png
 :name: HeatFlux
 Heat Flux
 ```
