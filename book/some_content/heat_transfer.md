@@ -26,7 +26,6 @@ The conductive coupling is a function of the material conductivity and a shape f
 
 For a “simple” part like a rectangle, a cylinder or a plate the shape factor can be described as the division of cross-section (A in m2), divided by the length of the thermal path (L in m). 
 
-
 In practice in a thermal model or analysis, a structure will often be simplified into bars, plates and cylinders. For more complex shapes like discs, equations can be found in literature, e.g. in ECSS-E-HB-31-01. Whenever that is not possible a FEM or CAD tool can be used to analyse the thermal conduction between two interface points of a structure. 
 
 Material conductivity is not a constant with temperature. When analysing the properties in a certain temperature band, a constant can be assumed. When this is not possible, a conductivity integral needs to be used.
@@ -129,33 +128,33 @@ Be very careful, this only holds if the wavelength or wavelength band is the sam
 
 As a grey body does not fully absorb all incoming radiation, part of the radiation is reflected or transmitted. As shown below, the sum of absorptivity, transmissivity and reflectivity must be 1. Note that emissivity is not part of this relation, as it is not part of the incoming radiation, but rather different radiation produced by the body. 
 
-1=α+ρ+τ
- 
+```{math}
+:label: greybody
+1 = \alpha + \rho + \tau
+```
 
 Most bodies are not transmissive. Just as absorptivity, reflectivity and transmissivity are wavelength dependent properties. Take for example glass, in the visual spectrum it is very transmissive, but in infrared wavebands glass is opaque. This difference in optical properties at different wavelengths is the working principal of green houses. 
 
 The optical properties can be expressed in the absorptivity, reflectivity or emissivity of the material as function of the wavelength. Due to Kirchoff’s law, and the relation between absorptivity and reflectivity, the properties can be described in a single graph. This graph shows either the reflectivity or absorptivity/emissivity as function of the wavelength of the radiation. Figure 6 shows one of these graphs for a white paint. 
- 
 
 The radiation absorbed from another heat source, or emitted by a body, can be determined by integrating the relevant radiation spectrum with the corresponding graph. In practice, this spectrum is typically either the solar spectrum or an infrared (IR) spectrum. To simplify calculations, this integration over the wavelength-dependent reflectance and radiation spectrum is not performed for every case. Instead, the space industry commonly uses two coefficients: the solar absorption coefficient (α) and the infrared emission coefficient (ε).
 
 Confusingly, these coefficients resemble the previously discussed wavelength-dependent absorptivity and emissivity in name and symbols, but they refer to different applications.
 
-The solar absorption coefficient (α) is used to describe the absorption and reflection of solar radiation and albedo. Since objects in typical thermal engineering applications are not at the same temperature as the Sun, this coefficient is not used when calculating emitted radiation.
+**The solar absorption coefficient (α)** is used to describe the absorption and reflection of solar radiation and albedo. Since objects in typical thermal engineering applications are not at the same temperature as the Sun, this coefficient is not used when calculating emitted radiation.
 	
-The infrared emission coefficient (ε) is equal to the IR absorption coefficient due to Kirchhoff’s Law. Because of this equivalence, ε is used for both emission and absorption of IR radiation—whether it’s radiation exchanged between parts of a satellite, emitted to space, or absorbed from planetary IR sources.
+**The infrared emission coefficient (ε)** is equal to the IR absorption coefficient due to Kirchhoff’s Law. Because of this equivalence, ε is used for both emission and absorption of IR radiation—whether it’s radiation exchanged between parts of a satellite, emitted to space, or absorbed from planetary IR sources.
 
 Importantly, α and ε are not equal, as they refer to different parts of the radiation spectrum.
 
-As discussed before, the major part of the energy of solar radiation is between 0.2 and 3.0 μm and the major part of the IR radiation occurs between 1 and 35 μm. This difference can be used to create desired effects for an optical property. A theoretical example is shown in Figure 7. It can be seen that the different response of this theoretical material create an effect that relatively less solar radiation is absorbed, while IR is emitted (and absorbed) reasonably well. 
-
+As discussed before, the major part of the energy of solar radiation is between 0.2 and 3.0 μm and the major part of the IR radiation occurs between 1 and 35 μm. This difference can be used to create desired effects for an optical property. 
  
 In general, optical properties can be divided into 4 categories:
 
-	Solar absorbers: high α, low ε. For example polished aluminium. These surfaces heat up more under sunlight. A use for such a coating could be a solar stove for direct solar energy based propulsion. 
-	Solar reflector: low α, high ε. For example white paint or Optical Solar Reflectors (OSR). These surfaces remain relatively cool, even under sunlight.  This is used for applications that need to stay cool, for example sun shields and sun facing radiators.
-	Flat absorber: high α, high ε. For example black paint. These materials reduce heat exchange due to reflections, and can have better emission properties overall. These are often used inside spacecraft and inside test chambers. 
-	Flat reflector: low α, low ε. For example aluminium paint. These surfaces reflect all types of radiation and reduce the effect of radiative heat exchange. 
+* Solar absorbers: high α, low ε. For example polished aluminium. These surfaces heat up more under sunlight. A use for such a coating could be a solar stove for direct solar energy based propulsion. 
+* Solar reflector: low α, high ε. For example white paint or Optical Solar Reflectors (OSR). These surfaces remain relatively cool, even under sunlight.  This is used for applications that need to stay cool, for example sun shields and sun facing radiators.
+* Flat absorber: high α, high ε. For example black paint. These materials reduce heat exchange due to reflections, and can have better emission properties overall. These are often used inside spacecraft and inside test chambers.
+* Flat reflector: low α, low ε. For example aluminium paint. These surfaces reflect all types of radiation and reduce the effect of radiative heat exchange. 
  
 Some example values for the (solar) absorptivity coefficient and the IR emissivity coefficient are shown. 
 
