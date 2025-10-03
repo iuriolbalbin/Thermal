@@ -203,7 +203,7 @@ Some example values for the (solar) absorptivity coefficient and the IR emissivi
   - 0.92
   - 0.82
   - 1.12
-
+```
 
 To get a sense of the temperature response of a material, you can setup a simple heat balance for a one sided panel:
 
