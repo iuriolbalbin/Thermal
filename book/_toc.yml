@@ -5,8 +5,8 @@ parts:
   - caption: Content
     chapters:
     - file: some_content/overview.md
-      sections:
-      - file: some_content/text_and_code.ipynb
+    - file: some_content/thermalenvironment.md
+    - file: some_content/text_and_code.ipynb
   - caption: Exercises
     chapters:
     - file: exercises.md
