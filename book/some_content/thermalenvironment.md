@@ -22,17 +22,32 @@ This values also fluctuates slightly over the 11-year solar cycle (~±1.3 W/m²)
 Due to Earth's elliptical orbit, the Earth-Sun distance varies by ±1.7%, leading to a corresponding ±3.4% variation in solar irradiance. This means that in the Perihelion (early January) it will be ~1410 W/m² and in the Aphelion (early July): it will be ~1315 W/m². 
 
 Solar irradiance decreases with the square of the distance from the Sun. The following table shows relative solar heating at various planets (compared to Earth = 1.00):
+```{list-table} Relative solar heating 
+:header-rows: 1
+:name: Solarheating
 
-PlanetHeat Relative to Earth
-|Mercury   | 6.67                   |
-| Venus    | 1.91                   |
-| Earth    | 1.00                   |
-| Mars     | 0.431                  |
-| Jupiter  | 0.0369                 |
-| Saturn   | 0.0110                 |
-| Uranus   | 0.0027                 |
-| Neptune  | 0.0011                 |
-| Pluto    | 0.00064                |
+* - Planet
+  - Heat Relative to Earth
+* - Mercury
+  - 6.67
+* - Venus
+  - 1.91
+* - Earth
+  - 1
+* - Mars
+  - 0.431
+* - Jupiter
+  - 0.0369
+* - Saturn
+  - 0.0110
+* - Uranus
+  - 0.0027
+* - Neptune
+  - 0.0011
+* - Pluto
+  - 0.00064
+```
+
 
 This steep drop makes solar panels rare beyond Mars' orbit. Deep-space missions (e.g., to Jupiter or beyond) often rely on nuclear power sources instead.
 
