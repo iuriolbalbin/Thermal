@@ -4,8 +4,9 @@ root: intro.md
 parts:
   - caption: Content
     chapters:
-    - file: some_content/overview.md
+    - file: some_content/Thermal_control_objectives.md
     - file: some_content/thermalenvironment.md
+    - file: some_content/heat_transfer.md
     - file: some_content/text_and_code.ipynb
   - caption: Exercises
     chapters:
