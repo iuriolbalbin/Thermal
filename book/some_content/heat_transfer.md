@@ -217,12 +217,17 @@ In thermal radiation analysis, **Gebhart factors** are used to describe how much
 
 The Gebhart factor *Bij* represents the fraction of radiation leaving surface i that is eventually absorbed by surface j. Unlike view factors, Gebhart factors include the effects of multiple reflections between surfaces.
 For an enclosure of N surfaces, the Gebhart factor can be calculated as:
-
-where Fij is the view factor from surface i to j, and εj is the emissivity of surface j. 
+```{math}
+:label: Gebhart1
+\( B_{ij} = F_{ij}\,\varepsilon_{j} + \sum_{k=1}^{N} (1-\varepsilon_{k})\,F_{ik}\,B_{kj} \)
+```
+where *Fij* is the view factor from surface *i* to *j*, and *εj* is the emissivity of surface *j*. 
 
 When analysing an enclosure, several general relationships among the possible Gebhart factors can be defined. These follow rules similar to view factor algebra:
-Bounding: Gebhart factors are fractions by definition and are bounded between 0 and 1:
-Conservation: The total of all Gebhart factors from a given surface must equal 1, including the portion it reabsorbs itself:
-Reciprocity: There is a symmetry in energy exchange between surfaces.   The factor Rij is the radiative coupling factor between surfaces i and j (in m²). 
+- Bounding: Gebhart factors are fractions by definition and are bounded between 0 and 1:
+
+- Conservation: The total of all Gebhart factors from a given surface must equal 1, including the portion it reabsorbs itself:
+
+- Reciprocity: There is a symmetry in energy exchange between surfaces.   The factor Rij is the radiative coupling factor between surfaces i and j (in m²). 
 
 In practical thermal analysis, Gebhart factors allow for more accurate calculation of radiative heat exchange in enclosures, particularly when multiple reflections are significant. These values can be obtained from known view factors and surface emissivities or by using specialized radiation analysis software with Monte Carlo raytracing.
